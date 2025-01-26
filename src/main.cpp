@@ -38,11 +38,14 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
     glViewport(0, 0, width, height);
 }
 
+
 int main(){
     glfwInit();
-    glfwWindowHint(GLFW_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_CORE_PROFILE, GLFW_OPENGL_PROFILE);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);  // Major version 3
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);  // Minor version 3
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // Gunakan Core Profile
+    
+
 
     GLFWwindow* window = glfwCreateWindow(800, 600, "GrimForge engine", NULL, NULL);
 
@@ -52,11 +55,7 @@ int main(){
         return -1;
     }
     glfwMakeContextCurrent(window);
-
-    if (!gladLoadGL()) {
-    std::cout << "ERROR: Failed to initialize OpenGL loader!" << std::endl;
-    return -1;
-    }
+    gladLoadGL();
 
     glViewport(0, 0, 800, 600);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
@@ -80,6 +79,9 @@ int main(){
     glBindVertexArray(0); 
 
     glClearColor(0.3, 0.3, 0.3, 1.0);
+
+    const GLubyte* version = glGetString(GL_VERSION);
+    std::cout << "OpenGL Version: " << version << std::endl;
 
     while(!glfwWindowShouldClose(window)){
         
