@@ -10,7 +10,7 @@
                                                                                                                             
 </pre>
 
-HELLO!
-This is simple engine for making retro engine. :>
+HELLO! 
+This is simple engine for making retro game. :>
 
 
