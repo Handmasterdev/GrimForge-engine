@@ -1,0 +1,3 @@
+/home/handdev/Desktop/GF(GrimForge) engine/build/CMakeFiles/engine.dir
+/home/handdev/Desktop/GF(GrimForge) engine/build/CMakeFiles/edit_cache.dir
+/home/handdev/Desktop/GF(GrimForge) engine/build/CMakeFiles/rebuild_cache.dir
